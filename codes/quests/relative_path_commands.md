@@ -1,18 +1,19 @@
-리눅스 상대 주소 실습 문제
-사전 준비: 실습 환경 설정
+# 리눅스 상대 주소 실습 문제
+## 사전 준비: 실습 환경 설정
 다음 명령어로 실습 환경을 준비하세요:
-mkdir -p ~/practice/project/{src,docs,tests,config}
-mkdir -p ~/practice/project/src/{main,utils}
-mkdir -p ~/practice/project/docs/{user,dev}
-mkdir -p ~/practice/project/tests/unit
-touch ~/practice/project/README.md
-touch ~/practice/project/src/main/app.py
-touch ~/practice/project/src/utils/helper.py
-touch ~/practice/project/docs/user/manual.txt
-touch ~/practice/project/docs/dev/api.md
-touch ~/practice/project/tests/test_main.py
-touch ~/practice/project/config/settings.conf
+- mkdir -p ~/practice/project/{src,docs,tests,config}
+- mkdir -p ~/practice/project/src/{main,utils}
+- mkdir -p ~/practice/project/docs/{user,dev}
+- mkdir -p ~/practice/project/tests/unit
+- touch ~/practice/project/README.md
+- touch ~/practice/project/src/main/app.py
+- touch ~/practice/project/src/utils/helper.py
+- touch ~/practice/project/docs/user/manual.txt
+- touch ~/practice/project/docs/dev/api.md
+- touch ~/practice/project/tests/test_main.py
+- touch ~/practice/project/config/settings.conf
 
+```
 완성된 디렉토리 구조:
 ~/practice/project/
 ├── README.md
@@ -31,7 +32,7 @@ touch ~/practice/project/config/settings.conf
 │   └── test_main.py
 └── config/
     └── settings.conf
-
+```
 
 # 연습문제 1: 기본 상대 주소 이해
 ## 1-1. 현재 위치에서 상대 주소 작성
