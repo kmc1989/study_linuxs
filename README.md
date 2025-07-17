@@ -7,3 +7,5 @@
 - Basic Linux Quests : [명령어](codes/quests/basic_linux_commands.md)
 - Basic More Linux Quests : [명령어](codes/quests/basic_more_linux_commands.md)
 - Relative Path Commands Quests : [명령어](codes/quests/relative_path_commands.md)
+- Wildcard Practice Quests : [명령어](codes/quests/40_linux_wildcard_practice.md)
+
