@@ -418,7 +418,19 @@ Sticky Bit 설정으로 자신의 파일만 삭제 가능
 명령어를 작성하세요:
 # 9-2 답안 작성란
 ```shell
-
+[root@localhost permission_practice]# mkdir ./temp/
+[root@localhost permission_practice]# ls
+backup  company  logs  private  shared  system_check.sh  temp
+[root@localhost permission_practice]# chmod +t ./temp/
+[root@localhost permission_practice]# ls -ld ./temp/
+drwxr-xr-t. 2 root root 6 Jul 21 19:01 ./temp/
+[root@localhost permission_practice]# chmod o+w ./temp/
+[root@localhost permission_practice]# ls -ld ./temp/
+drwxr-xrwt. 2 root root 6 Jul 21 19:01 ./temp/
+# 크론탭 설정
+[root@localhost permission_practice]# crontab -e
+[root@localhost permission_practice]# crontab -l
+@daily find /root/permission_practice/temp -type f -mtime +8 -delete
 ```
 10. 백업 및 아카이브 권한 관리
 10-1. 백업 파일 보안
@@ -429,7 +441,14 @@ backup/monthly/ : root만 접근 가능
 모든 백업 파일은 생성 후 읽기 전용으로 자동 변경
 명령어를 작성하세요:
 # 10-1 답안 작성란
-
+```shell
+[root@localhost permission_practice]# chgrp developers backup/daily
+[root@localhost permission_practice]# chgrp managers   backup/weekly
+[root@localhost permission_practice]# chmod 2740 backup/daily
+[root@localhost permission_practice]# chmod 2700 backup/weekly
+[root@localhost permission_practice]# chmod 700  backup/monthly
+[root@localhost permission_practice]# umask 033
+```
 
 
 
