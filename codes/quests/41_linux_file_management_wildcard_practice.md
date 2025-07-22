@@ -288,8 +288,9 @@ rm -r *.tmp && ls -l
 # 명령어들을 작성하세요:
 ```
 mkdir -p ./logs/2024 && mv ./logs/*2024* ./logs/2024 && ls ./logs/2024 && \
-
-
+cd ./logs && cp log_error*.txt ./error && ls ./error && \
+rm *log*2023*.txt && ls -l
+mv log_system*.txt ./system && ls ./system/
 ```
 7-3. 개발 환경 정리 시나리오
 # 시나리오: 개발 프로젝트 구조 정리
@@ -303,7 +304,13 @@ mkdir -p ./logs/2024 && mv ./logs/*2024* ./logs/2024 && ls ./logs/2024 && \
 # 4. 데이터 파일들(*.csv, *.dat)을 data 디렉터리로 이동
 
 # 명령어들을 작성하세요:
-
+```
+mv *.sh ./scripts/ && ls ./scripts/ && \
+mv *.{conf,config} ./backup/config/ && \
+find . -type f \( -name "*.conf" -o -name "*.config" \) -exec mv {} ./backup/config/ \; && \
+mkdir ./docs && find . -type f \( -name "*.md" -o -name "*.txt" \) -exec mv {} ./docs/ \; && \
+find . -type f \( -name "*.csv" -o -name "*.data" \) -exec mv {} ./data/ \;
+```
 
 8. 보너스 문제
 8-1. 한 줄 명령어 도전
