@@ -20,7 +20,7 @@
 
 
 📄 파일명 예시
-80_1_shell_variables_aguments.sh
+80_1_shell_variables_arguments.sh
 
 ✍️ 수강생이 작성해야 할 동작 흐름
 인자 개수 확인 (2개 아닐 시 오류 메시지 출력)
@@ -37,7 +37,7 @@
 
 
 ✅ 실행 예제
-$ ./80_1_shell_variables_aguments.sh welcome.txt "Hello Linux Learners!"
+$ ./80_1_shell_variables_arguments.sh welcome.txt "Hello Linux Learners!"
 
 📂 결과
 현재 디렉토리에 welcome.txt 파일이 생성됨
@@ -58,7 +58,7 @@ Hello Linux Learners!
 $1, $2를 사용하여 외부 인자를 받을 수 있습니다.
 
 ```shell
-[mincheolkim@localhost Downloads]$ nano 80_1_shell_variables_aguments.sh 
+[mincheolkim@localhost Downloads]$ nano 80_1_shell_variables_arguments.sh 
 # shell 파일 내부 EOF
 # V_FILE_NAME="$1"
 # V_CONTENT="$2"
@@ -69,7 +69,7 @@ echo "File name : $1"
 
 echo "Success created the file($1)"
 # EOF
-[mincheolkim@localhost Downloads]$ source ./80_1_shell_variables_aguments.sh welcome.txt "Hello Linux Learners!"
+[mincheolkim@localhost Downloads]$ source ./80_1_shell_variables_arguments.sh welcome.txt "Hello Linux Learners!"
 File name : welcome.txt
 Success created the file(welcome.txt)
 
