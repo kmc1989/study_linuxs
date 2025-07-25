@@ -105,7 +105,55 @@ ERROR 비율이 30% 이상이면 "위험", 20% 이상이면 "주의", 그 외는
 grep, wc, uniq, sort, tail 명령어 활용
 리다이렉션으로 파일 저장
 수치 계산을 위한 조건문 사용
+```shell
+# remote to jeongho's pc
 
+# sh 파일 내용 EOF
+#!/bin/bash
+
+echo "server_logs.txt file's line : $(cat server_logs.txt | wc -l)"
+
+V_ERROR_LINE=$(cat server_logs.txt | grep "ERROR" | wc -l)
+V_LOG_LINE=$(cat server_logs.txt | wc -l)
+echo "All 'ERROR' line : $V_ERROR_LINE"
+
+echo "All 'WARNING' line : $(cat server_logs.txt | grep "WARNING" | wc -l)"
+
+
+echo "All 'INFO' line : $(cat server_logs.txt | grep "INFO" | wc -l)"
+
+cat server_logs.txt | grep "ERROR" > ./errors.log
+
+echo "Many error's top 5"
+
+cat errors.log | cut -d" " -f4-5 | tr -d ":" | sort | uniq -c | head -n 5
+
+V_PERCENT=$(( V_ERROR_LINE * 100 / V_LOG_LINE ))
+
+
+echo "$V_PERCENT"
+
+if [ $V_PERCENT -ge 30 ]; then
+        echo "DANGER!"
+elif [ $V_PERCENT -ge 20 ]; then
+        echo "CAUTION!"
+else
+        echo "GOOD!"
+fi
+# EOF
+
+[jeongho@192.168.0.47 ~/shell_practice]$ source log_monitor.sh~
+server_logs.txt file's line : 12
+All 'ERROR' line : 5
+All 'WARNING' line : 2
+All 'INFO' line : 5
+Many error's top 5
+      2 Authentication failed
+      2 Database connection
+      1 Network timeout
+41
+DANGER!
+```
 문제 3: 판매 데이터 분석 시스템
 파일: sales_analyzer.sh
 요구사항:
