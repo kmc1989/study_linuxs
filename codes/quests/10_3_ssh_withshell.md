@@ -131,7 +131,7 @@ cat errors.log | cut -d" " -f4-5 | tr -d ":" | sort | uniq -c | head -n 5
 V_PERCENT=$(( V_ERROR_LINE * 100 / V_LOG_LINE ))
 
 
-echo "$V_PERCENT"
+echo "ERROR Percentage : $V_PERCENT"
 
 if [ $V_PERCENT -ge 30 ]; then
         echo "DANGER!"
@@ -153,6 +153,19 @@ Many error's top 5
       1 Network timeout
 41
 DANGER!
+
+[jeongho@192.168.0.47 ~/shell_practice]$ source log_monitor.sh~
+server_logs.txt file's line : 12
+All 'ERROR' line : 5
+All 'WARNING' line : 2
+All 'INFO' line : 5
+Many error's top 5
+      2 Authentication failed
+      2 Database connection
+      1 Network timeout
+ERROR Percentage : 41
+DANGER!
+
 ```
 문제 3: 판매 데이터 분석 시스템
 파일: sales_analyzer.sh
