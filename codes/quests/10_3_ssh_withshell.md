@@ -1,11 +1,13 @@
 Shell 조건문 및 텍스트 처리 실습 문제
 실습 환경 설정
 1. 실습 디렉토리 생성 및 이동
+```shell
 mkdir ~/shell_practice
 cd ~/shell_practice
-
+```
 2. 실습용 데이터 파일 생성
 students.txt 파일 생성
+```shell
 cat > students.txt << EOF
 김철수:수학:85:영어:92:과학:78
 이영희:수학:95:영어:88:과학:91
@@ -18,8 +20,9 @@ cat > students.txt << EOF
 한도윤:수학:81:영어:77:과학:83
 송민재:수학:86:영어:89:과학:91
 EOF
-
+```
 server_logs.txt 파일 생성
+```shell
 cat > server_logs.txt << EOF
 2024-01-15 10:30:15 INFO User login successful: user001
 2024-01-15 10:31:22 ERROR Database connection failed
@@ -34,8 +37,9 @@ cat > server_logs.txt << EOF
 2024-01-15 10:40:28 INFO User login successful: user004
 2024-01-15 10:41:35 ERROR Authentication failed: user005
 EOF
-
+```
 sales_data.txt 파일 생성
+```shell
 cat > sales_data.txt << EOF
 2024-01,서울,노트북,1500000
 2024-01,부산,스마트폰,800000
@@ -50,8 +54,9 @@ cat > sales_data.txt << EOF
 2024-03,서울,스마트폰,820000
 2024-03,부산,스마트폰,790000
 EOF
-
+```
 words.txt 파일 생성
+```shell
 cat > words.txt << EOF
 apple
 banana
@@ -66,7 +71,7 @@ fig
 banana
 CHERRY
 EOF
-
+```
 
 # 실습 문제
 ## 문제 1: 학생 성적 분석기 
